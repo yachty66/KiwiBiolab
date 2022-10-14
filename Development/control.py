@@ -38,15 +38,11 @@ Everything what has something to do with ressources is in the folder /Users/maxh
 - __init__.py
 - one path above is another __init__.py where I need to import new created resources 
 '''
-
-#- [ ] error handling
-#- [ ] logging
-
-from pylabrobot.liquid_handling import LiquidHandler
-from pylabrobot.liquid_handling.backends import STAR
-from pylabrobot.liquid_handling.resources.abstract import tip_rack
-from pylabrobot.liquid_handling.resources.abstract.tip_rack import TipRack
-from pylabrobot.liquid_handling.resources.hamilton import STARDeck
+from pylabrobot.pylabrobot.liquid_handling import LiquidHandler
+from pylabrobot.pylabrobot.liquid_handling.backends import STAR
+from pylabrobot.pylabrobot.liquid_handling.resources.abstract import tip_rack
+from pylabrobot.pylabrobot.liquid_handling.resources.abstract.tip_rack import TipRack
+from pylabrobot.pylabrobot.liquid_handling.resources.hamilton import STARDeck
 #from pylabrobot.liquid_handling.resources.hamilton import STARLetDeck
 import logging
 logging.getLogger("pylabrobot").setLevel(logging.DEBUG)
@@ -55,7 +51,7 @@ backend = STAR()
 lh = LiquidHandler(backend=backend, deck=STARDeck())
 lh.setup()
 #check again if tips are correct
-from pylabrobot.liquid_handling.resources import (
+from pylabrobot.pylabrobot.liquid_handling.resources import (
     MFX_CAR_5Tip,
     VER_ST,
     SMP_CAR_32_12x75_A00,
