@@ -44,8 +44,8 @@ from pylabrobot.pylabrobot.liquid_handling.resources.abstract import tip_rack
 from pylabrobot.pylabrobot.liquid_handling.resources.abstract.tip_rack import TipRack
 from pylabrobot.pylabrobot.liquid_handling.resources.hamilton import STARDeck
 #from pylabrobot.liquid_handling.resources.hamilton import STARLetDeck
-import logging
-logging.getLogger("pylabrobot").setLevel(logging.DEBUG)
+#import logging
+#logging.getLogger("pylabrobot").setLevel(logging.DEBUG)
 
 backend = STAR()
 lh = LiquidHandler(backend=backend, deck=STARDeck())
@@ -58,7 +58,7 @@ from pylabrobot.pylabrobot.liquid_handling.resources import (
     test   
 )
 
-#ich kann einfach einen plate carrier definieren welcher die Koordinaten hat, dass er genau auf die Position fährt wo ich aspiraten möchte
+#tip is on wrong height i.e. i need to move it up. I 
 tip_car = MFX_CAR_5Tip(name='tip carrier')
 tip_car[1] = VER_ST(name='tips_01')
 lh.deck.assign_child_resource(tip_car, rails=43)
